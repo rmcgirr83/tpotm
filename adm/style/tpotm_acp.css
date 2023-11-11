@@ -1,0 +1,59 @@
+/* CSS Document */
+
+.tpotm-select select {
+	font-size: inherit;
+	line-height: inherit;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	width: auto;
+	height: 32px;
+	padding: 5px;
+	-webkit-appearance: none;
+}
+
+.tpotm-acp-inner {
+	background-color: #f7efe0; /* light gold */
+}
+
+.tpotm-acp-middle {
+	background-image: url("../images/tpotm_acp_gfx.png");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center;
+	background-size: cover;
+}
+
+.tpotm-acp-outer {
+	background-color: #f3f3f3; /* light grey */
+}
+
+/* That's the native phpBB prosilver class "rules" slightly modified */
+.tpotm-acp-rules {
+	font-size: 11px;
+	background-color: #d6e9cf; /* light green */
+	border-radius: 7px;
+	color: #125814; /* dark green */
+	margin-bottom: 12px;
+	padding: 5px 10px;
+}
+
+/* Better alignment than the core phpbb */
+fieldset dd {
+	margin-top: 2px;
+	padding-top: 3px;
+}
+
+/* Rounded corners against the core phpbb */
+fieldset {
+	border-radius: 7px;
+	padding: 5px 10px;
+}
+
+/* Rounded corners against the core phpbb */
+
+/* noinspection Stylelint ,Stylelint */
+input.button1,
+input.button2 {
+	border-radius: 4px;
+}

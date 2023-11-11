@@ -1,0 +1,198 @@
+/* miniprofile next to posts (for 3.1) */
+.tpotm-miniprofile-badge {
+	vertical-align: bottom;
+	width: auto;
+	max-height: 14px;
+	padding-left: 4px;
+}
+
+/* miniprofile next to posts (for 3.2) */
+
+/* noinspection Stylelint */
+i.fa-spinner {
+	color: #2a6496;
+	cursor: pointer;
+}
+
+/* index and hall (for 3.2) */
+
+/* noinspection Stylelint */
+i.fa-question-circle-o {
+	cursor: pointer;
+}
+
+/* UCP (for 3.1) */
+.tpotm-ucp-badge {
+	vertical-align: text-bottom;
+	width: auto;
+	max-height: 14px;
+	padding-left: 4px;
+}
+
+/***************************************
+* This section is for the hall of fame *
+***************************************/
+.tpotm-head-text {
+	font-size: 24px;
+	text-align: center;
+	color: #105289;
+}
+
+.tpotm-div-1 {
+	font-size: 14px;
+	background-repeat: no-repeat;
+	background-position: 100% 0;
+	border-radius: 7px;
+	box-shadow: 1px 2px 3px #6f6d6d;
+	color: #105289;
+	position: relative;
+	margin: 10px;
+	padding: 5px 10px;
+}
+
+.tpotm-div-1,
+.text1 {
+	font-size: 11px;
+	text-decoration: none;
+}
+
+.tpotm-div-2 {
+	margin-top: -15px;
+	margin-left: -20px;
+	padding: 3px;
+}
+
+.tpotm-div-2,
+.text2 {
+	font-size: 24px;
+	text-decoration: none;
+}
+
+.tpotm-div-3 {
+	text-align: center;
+	background-color: #80bf00;
+	border-radius: 100%;
+	width: 120px;
+	height: 120px;
+	margin: 2px auto;
+}
+
+.tpotm-div-4 {
+	text-align: center;
+	background-color: #ecf3f7;
+	border-radius: 100%;
+	position: relative;
+	top: 10px;
+	left: 10px;
+	width: 100px;
+	height: 100px;
+}
+
+.tpotm-span-1 {
+	font-size: 16px;
+	font-weight: bold;
+	position: relative;
+	top: 40px;
+}
+
+.tpotm-div-5 {
+	font-weight: bold;
+	text-align: center;
+}
+
+/* noinspection Stylelint */
+a.hall-avatar-tpotm img {
+	background-color: transparent;
+	border-radius: 7px;
+	box-shadow: 1px 2px 3px #6f6d6d;
+	width: auto;
+	height: 80px;
+	margin-bottom: 2px;
+}
+
+/* for 3.1 navigation prepend icon */
+.icon-tpotm-hall {
+	background-image: url("./images/icon-tpotm-hall.png");
+	background-repeat: no-repeat;
+}
+
+/* for 3.1 */
+.icon-tpotm-stats {
+	vertical-align: middle;
+	width: auto;
+	max-height: 16px;
+	margin-bottom: 4px;
+	cursor: pointer;
+}
+
+/* Main viewport container, uses flex row wrap */
+.tpotm-container {
+	background: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	overflow: auto;
+	justify-content: space-around;
+	height: auto; /* else 304px; means 76 x 4 "((66+3+3+2+2) x 4)" tpotm-flex-cell height */
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+/* Each element within the viewport container */
+.tpotm-flex-item {
+	-ms-flex: 1 1 auto;
+	flex: 1 1;
+	-webkit-box-flex: 1;
+}
+
+/* Avatar container */
+.tpotm-flex-avatar {
+	vertical-align: middle;
+	background-color: transparent;
+	border-width: 1px;
+	border-style: none;
+	border-radius: 4px;
+	box-shadow: 1px 2px 3px #6f6d6d;
+	display: inline-flex;
+	width: auto;
+	padding: 2px;
+}
+
+/* Avatar image */
+.tpotm-flex-avatar img {
+	width: 32px;
+	height: 32px;
+}
+
+/* The wrapper for each user content - default packed */
+.tpotm-flex-cell {
+	vertical-align: middle;
+	background: none;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #729ea5;
+	border-radius: 7px;
+	box-shadow: 1px 2px 3px #6f6d6d;
+	display: flex;
+	align-items: start;
+	width: 200px;
+	height: 66px;
+	padding: 3px;
+}
+
+/* Each text entry, with or without a link - default packed */
+.tpotm-flex-text,
+.tpotm-flex-text a {
+	font-size: 10px;
+	line-height: 14px;
+	white-space: nowrap;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	flex: 1;
+	width: 196px; /* (200 - (2+2)) tpotm-flex-cell width */
+}
+
+/***************************************
+* End section hall of fame             *
+***************************************/
