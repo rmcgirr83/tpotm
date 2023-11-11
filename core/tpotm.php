@@ -546,11 +546,13 @@ class tpotm
 			$this->db->sql_freeresult($result);
 
 			/* There is a TPOTM, let's update the DB then */
-			if (((int) $row['total_posts'] >= 1) && empty($row['user_tpotm']))
+			if (!empty($row['total_posts']))
 			{
-				$this->perform_user_reset((int) $row['user_id']);
+				if (((int) $row['total_posts'] >= 1) && empty($row['user_tpotm']))
+				{
+					$this->perform_user_reset((int) $row['user_id']);
+				}
 			}
-
 			$this->cache->put('_tpotm', $row, (int) $this->config_time_cache());
 		}
 
@@ -606,11 +608,15 @@ class tpotm
 		 * Data Syncronization
 		 */
 		$row = $this->perform_cache_on_main_db_query();
-		$tpotm_tot_posts = $this->perform_cache_on_tpotm_tot_posts((int) $row['user_id']);
+		$tpotm_tot_posts = 0;
+		$tpotm_un_string = '';
+		if (!empty($row['user_id']))
+		{
+			$tpotm_tot_posts = $this->perform_cache_on_tpotm_tot_posts((int) $row['user_id']);
+			/* Only authed can view the profile */
+			$tpotm_un_string = ($this->auth->acl_get('u_viewprofile')) ? get_username_string('full', $row['user_id'], $row['username'], $row['user_colour']) : get_username_string('no_profile', $row['user_id'], $row['username'], $row['user_colour']);
+		}
 		$total_month = $this->perform_cache_on_this_month_total_posts();
-
-		/* Only authed can view the profile */
-		$tpotm_un_string = ($this->auth->acl_get('u_viewprofile')) ? get_username_string('full', $row['user_id'], $row['username'], $row['user_colour']) : get_username_string('no_profile', $row['user_id'], $row['username'], $row['user_colour']);
 
 		/**
 		 * Fresh install (one starting post by founder)
@@ -661,7 +667,8 @@ class tpotm
 		/**
 		 * Don't run this code if there is not a TPOTM yet
 		 */
-		if ((int) $tpotm_tot_posts >= 1)
+
+		if ((int) $tpotm_tot_posts >= 1 && $tpotm_tot_posts !== true)
 		{
 			/* Map arguments for  phpbb_get_avatar() */
 			$row_avatar = [
